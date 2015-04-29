@@ -1,0 +1,54 @@
+﻿<mmms>
+  <config>
+    <strategic>
+      <gun>S80</gun>   <!--这里定义你要用的火炮。第一个字母是系别(S\M\D)，下一个数字是车的等级(2-8)，下一个数字是第白板\升级炮。比如S61是苏-6级车-升级炮，即203mmB-4-->
+      <m2pix>8.5</m2pix>    <!--距离和像素的比值，默认1米=8.5像素-->
+      <angle>true</angle>   <!--显示角度面板-->
+      <maxDistance>false</maxDistance>   <!--显示最大射程面板-->
+      <extraInfo>false</extraInfo>    <!--显示额外信息面板（炮的名称、第二弹种的预判时间）-->
+      <center>false</center>     <!--显示准心-->
+      <circle>24</circle>   <!--敌人的行进速度。瞄准MOD会依照此速度计算你需要预瞄的半径并且画圆，下同-->
+      <circle>48</circle>  
+    </strategic>
+  </config>
+  <gundata>
+    <S20 name="76mm cannon mod1927" speed="400" gravity="290" type2="0" speed2="0" gravity2="0"/>
+    <S30 name="76mm cannon mod1927" speed="400" gravity="290" type2="0" speed2="0" gravity2="0"/>
+    <S31 name="76mm cannon mod1930" speed="400" gravity="308" type2="0" speed2="0" gravity2="0"/>
+    <S32 name="122mm cannon mod1930" speed="530" gravity="440" type2="HEAT" speed2="430" gravity2="290"/>
+    <S40 name="76mm cannon mod1930" speed="400" gravity="308" type2="0" speed2="0" gravity2="0"/>
+    <S41 name="122mm cannon mod1930" speed="530" gravity="440" type2="HEAT" speed2="430" gravity2="290"/>
+    <S42 name="152mm mortar NM mod1931" speed="440" gravity="320" type2="0" speed2="0" gravity2="0"/>
+    <S50 name="122mm howitzer A-19" speed="400" gravity="180" type2="0" speed2="0" gravity2="0"/>
+    <S51 name="152mm howitzer ML-20 mod1931" speed="460" gravity="230" type2="HEAT" speed2="500" gravity2="270"/>
+    <S60 name="152mm BR-2" speed="460" gravity="160.81" type2="0" speed2="0" gravity2="0"/>
+    <S61 name="203mm B-4" speed="520" gravity="220" type2="AP" speed2="416" gravity2="141"/>
+    <S70 name="152mm BR-2" speed="460" gravity="160.81" type2="0" speed2="0" gravity2="0"/>
+    <S71 name="203mm B-4" speed="520" gravity="220" type2="AP" speed2="416" gravity2="141"/>
+    <S80 name="180mm B-1-P" speed="640" gravity="280" type2="AP" speed2="512" gravity2="179"/>
+    <M20 name="76mm Gun M1918" speed="400" gravity="290" type2="0" speed2="0" gravity2="0"/>
+    <M30 name="105mm Howitzer M3" speed="311" gravity="220.0" type2="HEAT" speed2="311" gravity2="200"/>
+    <M31 name="105mm Howitzer M4" speed="472" gravity="230.0" type2="HEAT" speed2="472" gravity2="200"/>
+    <M40 name="105mm Howitzer M3" speed="311" gravity="220.0" type2="HEAT" speed2="311" gravity2="200"/>
+    <M41 name="105mm Howitzer M2A1" speed="480" gravity="220.0" type2="HEAT" speed2="450" gravity2="200"/>
+    <M50 name="155mm Howitzer M1" speed="440" gravity="160.0" type2="0" speed2="0" gravity2="0"/>
+    <M51 name="155mm Gun M1918M1" speed="440" gravity="160.0" type2="HE" speed2="460" gravity2="160.81"/>
+    <M60 name="155mm Gun M1918M1" speed="440" gravity="160.0" type2="HE" speed2="460" gravity2="160.81"/>
+    <M61 name="155mm Gun M1A1" speed="460" gravity="160.81" type2="0" speed2="0" gravity2="0"/>
+    <M70 name="155mm Gun M1A1" speed="460" gravity="160.81" type2="0" speed2="0" gravity2="0"/>
+    <M71 name="203mm Howitzer M1" speed="515" gravity="225" type2="AP" speed2="412" gravity2="144"/>
+    <M80 name="240mm Howitzer M1" speed="530" gravity="225" type2="AP" speed2="424" gravity2="144"/>
+    <D20 name="15cm sIG33 L11" speed="440" gravity="320" type2="0" speed2="0" gravity2="0"/>
+    <D30 name="10.5cm leFH16 L22" speed="480" gravity="230" type2="HEAT" speed2="450" gravity2="200"/>
+    <D31 name="10.5cm leFH18 L28" speed="490" gravity="240" type2="AP/HEAT" speed2="440" gravity2="190"/>
+    <D40 name="15cm sIG33 L11" speed="440" gravity="320" type2="0" speed2="0" gravity2="0"/>
+    <D41 name="15cm sFH13 L17" speed="440" gravity="160" type2="0" speed2="0" gravity2="0"/>
+    <D50 name="15cm sFH13 L17" speed="440" gravity="160" type2="0" speed2="0" gravity2="0"/>
+    <D51 name="15cm sFH18 L30" speed="490" gravity="190" type2="HEAT" speed2="420" gravity2="140"/>
+    <D60 name="15cm sFH18 L30" speed="490" gravity="190" type2="HEAT" speed2="420" gravity2="140"/>
+    <D61 name="15cm sFH36 L43" speed="550" gravity="215" type2="HEAT" speed2="444" gravity2="140"/>
+    <D70 name="17cm K72(sf)" speed="490" gravity="190" type2="HEAT" speed2="420" gravity2="140"/>
+    <D71 name="21cm Morser 18" speed="510" gravity="222" type2="AP" speed2="408" gravity2="142"/>
+    <D80 name="21cm Morser 21" speed="510" gravity="222" type2="AP" speed2="408" gravity2="142"/>
+  </gundata>
+</mmms>

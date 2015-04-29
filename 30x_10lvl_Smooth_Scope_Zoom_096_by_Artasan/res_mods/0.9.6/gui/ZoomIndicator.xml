@@ -1,0 +1,19 @@
+<!-- Config by Artasan -->
+<ZoomIndicator.xml>
+  <enable>True</enable>
+  <shadow>False</shadow>
+  <text>
+    <color>FFFF0088</color>
+    <position>
+      <X>850</X>
+      <Y>350</Y>
+    </position>
+    <colorS>000000FF</colorS>
+    <positionS>
+      <X>851</X>
+      <Y>351</Y>
+    </positionS>
+  </text>
+  <fText>X</fText>
+  <eText></eText>
+</ZoomIndicator.xml>
