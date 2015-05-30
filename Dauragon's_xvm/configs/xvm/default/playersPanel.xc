@@ -30,10 +30,6 @@
 
     // Opacity percentage of icons in the panels. 0 - transparent ... 100 - opaque.
     "iconAlpha": 100,
-
-    // true - Disable Platoon icons.
-    "removeSquadIcon": false,
-
     // true - disable background of the selected player.
     "removeSelectedBackground": false,
 
@@ -95,6 +91,7 @@
           //   "format" - text format (macros allowed)
           //
           // fields available for both MovieClip and TextField formats:
+          //   "enabled" - enable/disable field creation (global macros allowed)
           //   "x" - x position (macros allowed)
           //   "y" - y position (macros allowed)
           //   "w" - width (macros allowed)
@@ -228,9 +225,12 @@
       // Minimum width of the player's name column, 0-250. Default is 170.
       "width": 170,
 
+      // true - убрать отображение иконок взвода
+      "removeSquadIcon": false,
+
       // Display format for player nickname (macros allowed, see readme-en.txt).
-      "nickFormatLeft": "<font color='{{c:xwn8}}' alpha='{{alive?#FF|#80}}'>{{wn8%4d|----}}</font>\t<img src='xvm://res/icons/lang/{{language|default}}.png' width='16' height='13'> <img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'>\t{{nick%.20s~..}}",
-      "nickFormatRight": "{{nick%.20s~..}}\t<img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'> <img src='xvm://res/icons/lang/{{language|default}}.png' width='16' height='13'>\t<font color='{{c:xwn8}}' alpha='{{alive?#FF|#80}}'>{{wn8%4d|----}}</font>",
+      "nickFormatLeft": "<font color='{{c:xwn8}}' alpha='{{alive?#FF|#80}}'>{{wn8%4d|----}}</font>\t<img src='xvm://res/icons/flags/{{flag|default}}.png' width='16' height='13'> <img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'>\t{{nick%.20s~..}}",
+      "nickFormatRight": "{{nick%.20s~..}}\t<img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'> <img src='xvm://res/icons/flags/{{flag|default}}.png' width='16' height='13'>\t<font color='{{c:xwn8}}' alpha='{{alive?#FF|#80}}'>{{wn8%4d|----}}</font>",
 
       // Display format for vehicle name (macros allowed, see readme-en.txt).
       "vehicleFormatLeft": "<font color='{{c:xwn8}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",

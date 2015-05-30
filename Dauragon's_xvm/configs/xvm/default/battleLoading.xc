@@ -43,10 +43,10 @@
     "darkenNotReadyIcon": true,
 
     // Display format for the left panel (macros allowed, see readme-en.txt).
-    "formatLeftNick": "<img src='xvm://res/icons/lang/{{language|default}}.png' width='16' height='13'> <img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'> {{name%.20s~..}} <font alpha='#A0'>{{clan}}</font>",
+    "formatLeftNick": "<img src='xvm://res/icons/flags/{{flag|default}}.png' width='16' height='13'> <img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'> {{name%.20s~..}} <font alpha='#A0'>{{clan}}</font>",
 
     // Display format for the right panel (macros allowed, see readme-en.txt).
-    "formatRightNick": "{{name%.20s~..}} <font alpha='#A0'>{{clan}}</font> <img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'> <img src='xvm://res/icons/lang/{{language|default}}.png' width='16' height='13'>",
+    "formatRightNick": "{{name%.20s~..}} <font alpha='#A0'>{{clan}}</font> <img src='xvm://res/icons/xvm/xvm-user-{{xvm-user}}.png'> <img src='xvm://res/icons/flags/{{flag|default}}.png' width='16' height='13'>",
 
     // Display format for the left panel (macros allowed, see readme-en.txt).
     "formatLeftVehicle": "{{vehicle}}<font face='Lucida Console' size='12'> <font color='{{c:kb}}'>{{kb%2d~k|--k}}</font> <font color='{{c:xwn8}}'>{{xwn8|--}}</font> <font color='{{c:winrate}}'>{{winrate%2d~%|--%}}</font></font>",

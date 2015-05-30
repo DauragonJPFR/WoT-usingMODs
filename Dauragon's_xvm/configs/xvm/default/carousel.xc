@@ -59,7 +59,14 @@
       "xp":       { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
 
       // Vehicle name.
-      "tankName": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 }
+      // Название танка.
+      "tankName": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Status text (Crew incomplete, Repairs required)
+      // Статусный текст (Неполный экипаж, Требуется ремонт).
+      "statusText": { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Clan lock timer
+      // Таймер блокировки танка
+      "clanLock":   { "visible": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 }
     },
     // Extra cell fields (see playersPanel.xc).
     "extraFields": [
@@ -72,7 +79,11 @@
     // Order of types of vehicles.
     "types_order":   ["lightTank", "mediumTank", "heavyTank", "AT-SPG", "SPG"],
 
-    // Tank sorting criteria, available options: "nation", "type", "level", "maxBattleTier", "-level", "-maxBattleTier". (minus = reverse order)
-    "sorting_criteria": ["nation", "type", "level"]
+    // Tank sorting criteria, available options: (minus = reverse order)
+    // "nation", "type", "level", "maxBattleTier", "premium", "-level", "-maxBattleTier", "-premium"
+    "sorting_criteria": ["nation", "type", "level"],
+
+    // Suppress the tooltips for tanks in carousel
+    "suppressCarouselTooltips": false
   }
 }

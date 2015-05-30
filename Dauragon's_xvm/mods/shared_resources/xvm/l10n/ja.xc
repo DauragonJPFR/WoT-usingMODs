@@ -6,6 +6,18 @@
     // 翻訳者
     "XVM_translator": "Dauragon",
 
+  "locale": {
+    // Common
+    "Warning": "Warning",
+    "Error": "Error",
+    "Information": "Information",
+    "OK": "OK",
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "Remove": "Remove",
+    "Yes": "Yes",
+    "No": "No",
+
     // Ping
     "Initialization": "初期化中",
 
@@ -15,6 +27,7 @@
     // 勝利予想
     "Chance error": "エラー",
     "Chance to win": "勝利予想",
+    "Team strength": "Team strength",
     //"global": "global",
     //"per-vehicle": "車両毎",
     "chanceLive": "For Live",
@@ -111,11 +124,18 @@
     "radio_range/actual": "実測",
     "shootingRadius": "Shooting radius",
     "pitchLimits": "Elevation arc",
+    "pitchLimitsSide": "Elevation arc (side)",
+    "pitchLimitsRear": "Elevation arc (rear)",
     "traverseLimits": "Gun traverse arc",
     "terrainResistance": "Terrain resistance",
     "gravity": "Gravity",
     "shellSpeed": "弾速",
     "camoCoeff": "Camo coefficients",
+    "general": "General",
+    "armor": "Armor",
+    "firepower": "Firepower",
+    "mobility": "Mobility",
+    "crew": "Crew",
     "(m/sec)": "(m/秒)",
     "(sec)": "(秒)",
     "(m)": "(m)",
@@ -196,6 +216,7 @@
     "Not ready": "準備中",
 
     // Quests
+    "Hide completed": "完了済みを非表示",
     "Hide with honors": "名誉達成を非表示",
     "Hide unavailable": "未到達を非表示",
 

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<damagePanel>
+	
+	<!-- Авторы: Shtys, STL1te -->
+	
+	<!-- Список возможных макросов:
+	{{n}}               - переход на новую строку
+	{{t}}				- фиксированный отступ (равнозначен TAB)
+	{{hp}}              - текущее ХП
+	{{hp-max}}          - максимальное ХП
+	{{hp-ratio}}        - процент оставшегося ХП
+	{{dmg}}             - общий урон, который нанесли танку
+	{{dmg-ratio}}       - общий урон, который нанесли танку в процентах
+	{{count}}           - порядковый номер нанесенного урона танку
+	{{dmg-one}}         - урон, который нанесли танку одним попаданием
+	{{dmg-ratio-one}}   - урон, который нанесли танку одним попаданием в процентах
+	{{time-rel}}        - время с момента первого попадания по танку
+	{{time-abs}}        - время попадания по игровому таймеру боя
+	{{speed}}           - скорость движения танка
+	{{player}}          - ник игрока
+	{{vehicle}}         - название танка
+	{{repair-100}}      - таймер ремонта модулей с округлением до сотых
+	{{repair-10}}       - таймер ремонта модулей с округлением до десятых
+	{{repair}}          - таймер ремонта модулей с округлением до целых в большую сторону
+	{{atk-name-full}}	- полный ник атакующего
+	{{atk-name-short}}	- краткий ник атакующего
+	{{atk-veh-full}}	- полное название танка атакующего
+	{{atk-veh-short}}	- краткое название танка атакующего
+	{{atk-shell-gold}}	- тип снаряда атакующего (кредиты/золото)
+	{{atk-veh-type}}	- тип техники атакующего (ЛТ/СТ/ТТ/ПТ/САУ)
+	{{atk-veh-icon}}	- имя иконки техники атакующего
+	{{atk-shell}}		- тип снаряда атакующего (ББ/БП/КС/ОФ)
+	{{atk-dmg-kind}}	- тип урона (атака/таран/падение/пожар)
+	{{atk-hit-kind}}	- тип попадания (рикошет/броня не пробита/броня пробита без урона/броня пробита с уроном/критическое повреждение/повреждение от взрыва ОФ снаряда)
+	Макросы динамического цвета:
+	{{c:shellGold}}		- цвет по типу снаряда атакующего (кредиты/золото)
+	{{c:dmgKind}}		- цвет по типу урона атакующего (атака/таран/падение/пожар)
+	{{c:vehType}}		- цвет по типу техники атакующего (ЛТ/СТ/ТТ/ПТ/САУ)
+	{{c:hitKind}}		- цвет по типу попадания (рикошет/броня не пробита/броня пробита без урона/броня пробита с уроном/критическое повреждение/повреждение от взрыва ОФ снаряда) -->
+	
+	<battle>
+
+		<damagePanel>
+			<location x="0" y="230" center="false"/>		
+		</damagePanel>
+		
+		<consumablesPanel>
+			<location x="0" y="180" center="true"/>
+		</consumablesPanel>
+		
+		<vehicleMessagesPanel>
+			<location x="410" y="230" center="false"/>
+		</vehicleMessagesPanel>
+		
+		<messenger>
+			<location x="0" y="690" center="false"/>
+		</messenger>
+		
+	</battle>
+	
+	<background alpha="60">
+		<location x="-368" y="55" center="true"/>
+		<scale x="320" y="80"/>
+	</background>
+	
+
+	<tankIndicator>
+	
+		<tank alpha="100">
+			<location x="295" y="155" center="true"/>
+			<filter size="3" angle="0" distance="0" color="0x000000" alpha="0" strength="200"/>
+			<scale x="70" y="70"/>
+		</tank>
+		
+		<gun alpha="100"/>
+		
+		<turret alpha="100"/>
+		
+		<hull alpha="100"/> 
+		
+		<gunConstraints alpha="100">
+			<color normal="0x999999" critical="0xFF0000"/>
+		</gunConstraints>
+	
+	</tankIndicator>
+	
+	<crew alpha="100">
+		<location x="1655" y="125" center="false"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="0" strength="200"/>
+		<color normal="0x999999" critical="0xFF6600"/>
+		<scale x="120" y="120"/>
+	</crew>
+	
+
+	<lockIcon> 
+		<location x="190" y="140" center="true"/>
+		<filter size="3" angle="0" distance="0" color="0xFF0000" alpha="100" strength="80"/>
+		<scale x="100" y="100"/>
+		<color color="0xFF0000"/>
+	</lockIcon>
+	
+	<cruiseCtrl alpha="100">
+		<location x="320" y="130" center="true"/>
+		<scale x="100" y="100"/>
+	</cruiseCtrl>
+	
+
+	<healthBar alpha="100"> 
+		<location x="-238" y="170" center="true"/>
+		<scale x="210" y="110"/>
+		<color start="0xFD0100" middle="0xFF6700" end="0x009000"/>
+	</healthBar>
+	
+	<healthField visible="true">
+		<location x="-110" y="172" center="true"/>
+		<text alpha="100" width="230" height="25"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='14' color='#FFFFFF'>{{hp}} / {{hp-max}}</font>]]></format>
+	</healthField>
+	
+	<damageLog visible="true">
+		<location x="215" y="-16" center="false"/>
+		<text alpha="100" width="450" height="226"/>
+		<filter size="3" angle="0" distance="0" color="0xE71600" alpha="100" strength="100"/>
+		<format><![CDATA[<textformat leading='-3' tabstops='[45,85]'><font face='$FieldFont' color='#FFFFFF' size='15'>{{dmg-one}}<tab>{{atk-dmg-kind}}<tab>{{atk-veh-short}} {{atk-shell-gold}}</font></textformat>]]></format>
+		<direction>up</direction>
+		<notPierced visible="false">
+			<format><![CDATA[<textformat leading='-3' tabstops='[45,85]'><font face='$FieldFont'color='#9e9e9e' size='15'>{{atk-hit-kind}}<tab>{{atk-shell}} {{atk-shell-gold}}<tab>{{atk-veh-short}}</font></textformat>]]></format>
+		</notPierced>
+	</damageLog>
+	
+	<damageHit visible="true">
+		<location x="0" y="-140" center="true"/>
+		<text alpha="100" width="500" height="150"/>
+		<filter size="5" angle="0" distance="0" color="0xE71600" alpha="100" strength="200"/>
+		<format><![CDATA[<font size='34' color='#FFFFFF'>{{dmg-one}} {{atk-dmg-kind}} {{atk-shell-gold}}</font>]]>
+<![CDATA[<font size='34' color='#FFFFFF'>{{atk-veh-short}}</font>]]></format>
+		<delay>4</delay>
+		<notPierced visible="true">
+			<format><![CDATA[<font size='34' color='#9e9e9e'>{{atk-hit-kind}} {{atk-dmg-kind}} {{atk-shell-gold}}</font>]]>
+<![CDATA[<font size='34' color='#9e9e9e'>{{atk-veh-short}}</font>]]></format>
+		</notPierced>
+	</damageHit>
+	
+	<fireMessage enabled="false">
+		<location x="0" y="0" center="true"/>
+		<text alpha="100" width="500" height="70"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="100"/>
+		<format><![CDATA[<font face='Cuprum' size='40' color='#FF0000'>!Tank on Fire!</font>]]></format>
+	</fireMessage>
+	
+	<fireIcon visible="false">
+        <location x="0" y="-150" center="true"/>
+        <filter size="3" angle="0" distance="0" color="0x000000" alpha="0" strength="200"/>
+        <scale x="75" y="75"/>
+        <color color="0xFF0000"/>
+	</fireIcon>
+		
+	<speedField visible="true">
+		<location x="260" y="60" center="true"/>
+		<text alpha="100" width="100" height="25"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<textformat tabstops='20'><font face='Cuprum' size='15' color='#FFFFFF'><p align='right'>{{speed}}<tab><font size='10'>km/h</font></p></font></textformat>]]></format>
+	</speedField>
+	
+	<playerName visible="true">
+		<location x="-220" y="115" center="true"/>
+		<text alpha="100" width="110" height="25"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='14' color='#FFFFFF'><p align='left'>{{player}}</p></font>]]></format>
+	</playerName>
+	
+	<vehicleName visible="true">
+		<location x="90" y="115" center="true"/>
+		<text alpha="100" width="130" height="25"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='14' color='#FFFFFF'><p align='right'>{{vehicle}}</p></font>]]></format>
+	</vehicleName>
+
+	<repairTimer visible="true">
+		<location x="0" y="7"/>
+		<text alpha="100" width="45" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font size='22' color='#FFFFFF'><p align='center'>{{repair-10}}</p></font>]]></format>
+	</repairTimer>
+
+	<colors>
+		<shellGold credits="#FFFFFF" gold="#FF6655"/> <!-- {{c:shellGold}} -->
+		<dmgKind attack="#FFAA55" fire="#FF6655" ramming="#998855" collision="#228855"/> <!-- {{c:dmgKind}} -->
+		<vehType LT="#A2FF9A" MT="#FFACAC" HT="#FFF198" SPG="#EFAEFF" TD="#A0CFFF"/> <!-- {{c:vehType}} -->
+		<hitKind ricochet="#FFFFFF" notPierced="#FFFFFF" piercedNoDmg="#FFFFFF" piercedDmg="#FF0000" critical="#FFFFFF" explosion="#FFFFFF"/> <!-- {{c:hitKind}} -->
+	</colors>
+	
+	<!-- {{atk-shell-gold}} -->
+	<shellGold>
+		<credits></credits>
+		<gold><![CDATA[<font color='#FF6655'><b>G</b></font>]]></gold>
+	</shellGold>
+	
+	<!-- {{atk-shell}} -->
+	<shellType>
+		<AP>AP</AP>
+		<CR>APCR</CR>
+		<HC>HEAT</HC>
+		<HE>HE</HE>
+		<other></other>
+	</shellType>
+	
+	<!-- {{atk-dmg-kind}} -->
+	<damageKind>
+		<attack><![CDATA[{{atk-shell}}]]></attack>
+		<fire>fire</fire>
+		<ramming>ram.</ramming>
+		<collision>impact</collision>
+	</damageKind>
+	
+	<!-- {{atk-veh-type}} -->
+	<vehicleType>
+		<LT>LT</LT>
+		<MT>MТ</MT>
+		<HT>HТ</HT>
+		<SPG>SPG</SPG>
+		<TD>TD</TD>
+	</vehicleType>
+	
+	<!-- {{atk-hit-kind}} -->
+	<hitKind>
+		<ricochet><![CDATA[ricochet]]></ricochet>
+		<notPierced><![CDATA[bounce]]></notPierced>
+		<piercedNoDmg><![CDATA[0 dmg]]></piercedNoDmg>
+		<piercedDmg></piercedDmg>
+		<critical><![CDATA[critical hit]]></critical>
+		<explosion><![CDATA[splash]]></explosion>
+	</hitKind>
+	
+
+	<lengthShortName>5</lengthShortName>
+	
+	<modules alpha="100">
+		
+		<chassis>
+			<location x="-305" y="57" center="true"/>
+			<scale x="100" y="100"/>
+		</chassis>
+		
+		<ammoBay>
+			<location x="-305" y="97" center="true"/>
+			<scale x="100" y="100"/>
+		</ammoBay>
+		
+		<surveyingDevice>
+			<location x="-305" y="137" center="true"/>
+			<scale x="100" y="100"/>
+		</surveyingDevice>
+		
+		<engine>
+			<location x="-305" y="177" center="true"/>
+			<scale x="100" y="100"/>
+		</engine>
+		
+		<turretRotator>
+			<location x="-355" y="57" center="true"/>
+			<scale x="100" y="100"/> 
+		</turretRotator>
+		
+		<gun>
+			<location x="-355" y="97" center="true"/>
+			<scale x="100" y="100"/>
+		</gun>
+		
+		<radio>
+			<location x="-355" y="137" center="true"/>
+			<scale x="100" y="100"/>
+		</radio>
+		
+		<fuelTank>
+			<location x="-355" y="177" center="true"/>
+			<scale x="100" y="100"/>
+		</fuelTank>
+
+	</modules>
+	
+</damagePanel>

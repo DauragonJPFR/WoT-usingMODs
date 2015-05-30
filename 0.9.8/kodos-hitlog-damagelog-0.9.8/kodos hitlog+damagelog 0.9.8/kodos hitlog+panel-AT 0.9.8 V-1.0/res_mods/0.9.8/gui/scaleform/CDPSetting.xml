@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<damagePanel>
+	
+	<!-- Авторы: Shtys, STL1te -->
+	
+	<!-- Список возможных макросов:
+	{{n}}               - переход на новую строку
+	{{t}}				- фиксированный отступ (равнозначен TAB)
+	{{hp}}              - текущее ХП
+	{{hp-max}}          - максимальное ХП
+	{{hp-ratio}}        - процент оставшегося ХП
+	{{dmg}}             - общий урон, который нанесли танку
+	{{dmg-ratio}}       - общий урон, который нанесли танку в процентах
+	{{count}}           - порядковый номер нанесенного урона танку
+	{{dmg-one}}         - урон, который нанесли танку одним попаданием
+	{{dmg-ratio-one}}   - урон, который нанесли танку одним попаданием в процентах
+	{{time-rel}}        - время с момента первого попадания по танку
+	{{time-abs}}        - время попадания по игровому таймеру боя
+	{{speed}}           - скорость движения танка
+	{{player}}          - ник игрока
+	{{vehicle}}         - название танка
+	{{repair-100}}      - таймер ремонта модулей с округлением до сотых
+	{{repair-10}}       - таймер ремонта модулей с округлением до десятых
+	{{repair}}          - таймер ремонта модулей с округлением до целых в большую сторону
+	{{atk-name-full}}	- полный ник атакующего
+	{{atk-name-short}}	- краткий ник атакующего
+	{{atk-veh-full}}	- полное название танка атакующего
+	{{atk-veh-short}}	- краткое название танка атакующего
+	{{atk-shell-gold}}	- тип снаряда атакующего (кредиты/золото)
+	{{atk-veh-type}}	- тип техники атакующего (ЛТ/СТ/ТТ/ПТ/САУ)
+	{{atk-veh-icon}}	- имя иконки техники атакующего
+	{{atk-shell}}		- тип снаряда атакующего (ББ/БП/КС/ОФ)
+	{{atk-dmg-kind}}	- тип урона (атака/таран/падение/пожар)
+	{{atk-hit-kind}}	- тип попадания (рикошет/броня не пробита/броня пробита без урона/броня пробита с уроном/критическое повреждение/повреждение от взрыва ОФ снаряда)
+	Макросы динамического цвета:
+	{{c:shellGold}}		- цвет по типу снаряда атакующего (кредиты/золото)
+	{{c:dmgKind}}		- цвет по типу урона атакующего (атака/таран/падение/пожар)
+	{{c:vehType}}		- цвет по типу техники атакующего (ЛТ/СТ/ТТ/ПТ/САУ)
+	{{c:hitKind}}		- цвет по типу попадания (рикошет/броня не пробита/броня пробита без урона/броня пробита с уроном/критическое повреждение/повреждение от взрыва ОФ снаряда) -->
+	
+	<battle>
+	
+		<!-- Настройка панели повреждений -->
+		<damagePanel>
+			<location x="0" y="230" center="false"/> <!-- x, y - координаты расположения панели. Отсчет координат идет от левого нижнего угла экрана. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->			
+		</damagePanel>
+		
+		<!-- Настройка панели снарядов -->
+		<consumablesPanel>
+			<location x="0" y="58" center="true"/> <!-- x, y - координаты расположения панели. Отсчет координат идет от левого нижнего угла экрана. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		</consumablesPanel>
+		
+		<!-- Настройка панели сообщения о выведенных из строя модулях и контуженного экипажа -->
+		<vehicleMessagesPanel>
+			<location x="-250" y="68" center="true"/> <!-- x, y - координаты расположения панели. Отсчет координат идет от левого нижнего угла экрана. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		</vehicleMessagesPanel>
+		
+		<!-- Настройка боевого чата -->
+		<messenger>
+			<location x="0" y="622" center="false"/> <!-- x, y - координаты расположения панели. Отсчет координат идет от левого нижнего угла экрана. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		</messenger>
+		
+	</battle>
+	
+	<!-- Настройка фона панели -->
+	<background alpha="80"> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+		<location x="0" y="0" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+	</background>
+	
+	<!-- Настройка индикатора танка -->
+	<tankIndicator>
+	
+		<!-- Настройка индикатора танка -->
+		<tank alpha="100"> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+			<location x="115" y="140" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<filter size="3" angle="0" distance="0" color="0x000000" alpha="0" strength="200"/> <!-- size - размер тени. angle - угол тени. distance - расстояние смещения тени. color - цвет тени. alpha - прозрачность тени(100 - непрозрачно, 0 - прозрачно). strength - степень нанесения тени в процентах -->
+			<scale x="75" y="75"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</tank>
+		
+		<!-- Настройка орудия индикатора танка -->
+		<gun alpha="100"/> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+		
+		<!-- Настройка башни индикатора танка -->
+		<turret alpha="100"/> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+		
+		<!-- Настройка корпуса индикатора танка -->
+		<hull alpha="100"/> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+		
+		<!-- Настройка Углов Горизонтальной Наводки индикатора танка -->
+		<gunConstraints alpha="100"> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+			<color normal="0x999999" critical="0xFF0000"/> <!-- normal - цвет нормального УГН. critical - цвет граничного УГН -->
+		</gunConstraints>
+	
+	</tankIndicator>
+	
+	<crew alpha="75"> <!-- alpha - прозрачность не контуженного экипажа. 100 - непрозрачно, 0 - прозрачно -->
+		<location x="230" y="202"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. Для расположения экипажа в центре, нужно указывать х - равный ширине изображения экрана -->
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="0" strength="200"/> <!-- size - размер тени. angle - угол тени. distance - расстояние смещения тени. color - цвет тени. alpha - прозрачность тени(100 - непрозрачно, 0 - прозрачно). strength - степень нанесения тени в процентах -->
+		<color normal="0x999999" critical="0xFF6600"/> <!-- normal - цвет нормального экипажа. critical - цвет контуженного экипажа -->
+		<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+	</crew>
+	
+	<!-- Настройка иконки фиксации корпуса -->
+	<lockIcon> 
+		<location x="42" y="30" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		<filter size="3" angle="0" distance="0" color="0xFF0000" alpha="100" strength="80"/> <!-- size - размер тени. angle - угол тени. distance - расстояние смещения тени. color - цвет тени. alpha - прозрачность тени(100 - непрозрачно, 0 - прозрачно). strength - степень нанесения тени в процентах -->
+		<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		<color color="0xFF0000"/> <!-- color - цвет иконки -->
+	</lockIcon>
+	
+	<!-- Настройка круиз-контроля -->
+	<cruiseCtrl alpha="100"> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+		<location x="36" y="80" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+	</cruiseCtrl>
+	
+	<!-- Настройка полоски ХП -->
+	<healthBar alpha="100"> <!-- alpha - прозрачность. 100 - непрозрачно, 0 - прозрачно -->
+		<location x="1" y="22" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+		<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		<color start="0xFD0100" middle="0xFF6700" end="0x009000"/> <!-- start - цвет полоски когда ХП = 0%. middle - цвет полоски когда ХП = 50%. end - цвет полоски когда ХП = 100%. middle можно убрать, тогда цвет полоски при ХП = 50% посчитается автоматически -->
+	</healthBar>
+	
+	<healthField visible="true">
+		<location x="0" y="23" center="false"/>
+		<text alpha="100" width="230" height="25"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='14' color='#FFFFFF'><p align='center'>{{hp}} / {{hp-max}}</p></font>]]></format>
+	</healthField>
+	
+	<damageLog visible="true">
+		<location x="445" y="20" center="false"/>
+		<text alpha="100" width="450" height="226"/>
+		<filter size="3" angle="0" distance="0" color="0xE71600" alpha="100" strength="100"/>
+		<format><![CDATA[<textformat leading='-3' tabstops='[45,85]'><font face='$FieldFont' color='#FFFFFF' size='15'>{{dmg-one}}<tab>{{atk-dmg-kind}}<tab>{{atk-veh-short}} {{atk-shell-gold}}</font></textformat>]]></format>
+		<direction>up</direction>
+		<notPierced visible="false">
+			<format><![CDATA[<textformat leading='-2' tabstops='[45,85]'><font><font color='#9e9e9e'><font size='13'>{{atk-hit-kind}}</font><tab>{{atk-shell}} {{atk-shell-gold}}</font><tab><font color='#9e9e9e'>{{atk-veh-short}}</font></textformat>]]></format>
+		</notPierced>
+	</damageLog>
+	
+	<damageHit visible="true">
+		<location x="0" y="-140" center="true"/>
+		<text alpha="100" width="500" height="300"/>
+		<filter size="5" angle="0" distance="0" color="0xE71600" alpha="100" strength="200"/>
+		<format><![CDATA[<font size='34' color='#FFFFFF'>-{{dmg-one}} {{atk-dmg-kind}} {{atk-shell-gold}}</font>]]>
+<![CDATA[<font size='34' color='#FFFFFF'>{{atk-veh-short}} {{atk-hit-kind}}</font>]]></format>
+		<delay>5</delay>
+		<notPierced visible="true">
+			<format><![CDATA[<font size='34' color='#808080'>{{atk-hit-kind}} {{atk-dmg-kind}} {{atk-shell-gold}}</font>]]>
+<![CDATA[<font size='34' color='#808080'>{{atk-veh-short}}</font>]]></format>
+		</notPierced>
+	</damageHit>
+	
+	<fireMessage enabled="true">
+		<location x="0" y="-200" center="true"/>
+		<text alpha="100" width="500" height="70"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="100"/>
+		<format><![CDATA[<font face='Cuprum' size='50' color='#FF0000'><p align='center'>!Tank on Fire!</p></font>]]></format>
+	</fireMessage>
+	
+	<fireIcon visible="true">
+        <location x="0" y="-150" center="true"/>
+        <filter size="3" angle="0" distance="0" color="0x000000" alpha="0" strength="200"/>
+        <scale x="75" y="75"/>
+        <color color="0xFF0000"/>
+	</fireIcon>
+		
+	<speedField visible="true">
+		<location x="70" y="56" center="false"/>
+		<text alpha="100" width="100" height="25"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='15' color='#FFFFFF'><p align='right'>{{speed}}</p></font>]]></format>
+	</speedField>
+	
+	<playerName visible="true">
+		<location x="8" y="3" center="false"/>
+		<text alpha="100" width="110" height="25"/> 
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='14' color='#FFFFFF'><p align='left'>{{player}}</p></font>]]></format>
+	</playerName>
+	
+	<vehicleName visible="true">
+		<location x="98" y="3" center="false"/>
+		<text alpha="100" width="130" height="25"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='14' color='#FFFFFF'><p align='right'>{{vehicle}}</p></font>]]></format>
+	</vehicleName>
+
+	<repairTimer visible="true">
+		<location x="0" y="7"/>
+		<text alpha="100" width="45" height="35"/>
+		<filter size="3" angle="0" distance="0" color="0x000000" alpha="100" strength="200"/>
+		<format><![CDATA[<font face='Cuprum' size='25' color='#FFFFFF'><p align='center'>{{repair}}</p></font>]]></format>
+	</repairTimer>
+
+	<colors>
+		<shellGold credits="#FFFFFF" gold="#FF6655"/> <!-- {{c:shellGold}} -->
+		<dmgKind attack="#FFAA55" fire="#FF6655" ramming="#998855" collision="#228855"/> <!-- {{c:dmgKind}} -->
+		<vehType LT="#A2FF9A" MT="#FFACAC" HT="#FFF198" SPG="#EFAEFF" TD="#A0CFFF"/> <!-- {{c:vehType}} -->
+		<hitKind ricochet="#FFFFFF" notPierced="#FFFFFF" piercedNoDmg="#FFFFFF" piercedDmg="#FF0000" critical="#FFFFFF" explosion="#FFFFFF"/> <!-- {{c:hitKind}} -->
+	</colors>
+	
+	<!-- {{atk-shell-gold}} -->
+	<shellGold>
+		<credits></credits>
+		<gold>G</gold>
+	</shellGold>
+	
+	<!-- {{atk-shell}} -->
+	<shellType>
+		<AP>AP</AP>
+		<CR>APCR</CR>
+		<HC>HEAT</HC>
+		<HE>HE</HE>
+		<other></other>
+	</shellType>
+	
+	<!-- {{atk-dmg-kind}} -->
+	<damageKind>
+		<attack><![CDATA[{{atk-shell}}]]></attack>
+		<fire>fire</fire>
+		<ramming>ram.</ramming>
+		<collision>impact</collision>
+	</damageKind>
+	
+	<!-- {{atk-veh-type}} -->
+	<vehicleType>
+		<LT>LT</LT>
+		<MT>MТ</MT>
+		<HT>HТ</HT>
+		<SPG>SPG</SPG>
+		<TD>TD</TD>
+	</vehicleType>
+	
+	<!-- {{atk-hit-kind}} -->
+	<hitKind>
+		<ricochet>ricochet</ricochet>
+		<notPierced>bounce</notPierced>
+		<piercedNoDmg>0 dmg</piercedNoDmg>
+		<piercedDmg></piercedDmg>
+		<critical>critical</critical>
+		<explosion>blow up</explosion>
+	</hitKind>
+	
+
+	<lengthShortName>5</lengthShortName>
+	
+	<modules alpha="50"> <!-- alpha - прозрачность не поврежденного модуля. 100 - непрозрачно, 0 - прозрачно -->
+		
+		<!-- Двигатель -->
+		<engine>
+			<location x="4" y="42" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</engine>
+		
+		<!-- Боеукладка -->
+		<ammoBay>
+			<location x="4" y="82" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</ammoBay>
+		
+		<!-- Орудие -->
+		<gun>
+			<location x="4" y="122" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</gun>
+		
+		<!-- Башня -->
+		<turretRotator>
+			<location x="4" y="162" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</turretRotator>
+		
+		<!-- Шасси -->
+		<chassis>
+			<location x="180" y="42" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</chassis>
+		
+		<!-- Триплекс -->
+		<surveyingDevice>
+			<location x="180" y="82" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</surveyingDevice>
+		
+		<!-- Радио -->
+		<radio>
+			<location x="180" y="122" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</radio>
+		
+		<!-- Баки -->
+		<fuelTank>
+			<location x="180" y="162" center="false"/> <!-- x, y - координаты расположения элемента. Отсчет координат идет от верхнего левого угла панели. center - включение отсчета x координаты от центра экрана, true/false - включено/выключено -->
+			<scale x="100" y="100"/> <!-- x, y - масштаб элемента в процентах. 100 - оригинальный размер -->
+		</fuelTank>
+
+	</modules>
+	
+</damagePanel>
